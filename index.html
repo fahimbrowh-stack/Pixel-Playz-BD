@@ -19,7 +19,7 @@
             overflow: hidden;
         }
 
-        /* YouTube Background Fix with No-Cookie & No-Ads parameters[span_3](start_span)[span_3](end_span) */
+        /* YouTube Background[span_3](start_span)[span_3](end_span) */
         .video-background {
             position: fixed;
             top: 0; left: 0;
@@ -37,7 +37,6 @@
             position: absolute;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            /* 20% Blur for better text visibility[span_4](start_span)[span_4](end_span) */
             filter: blur(10px) brightness(0.5);
         }
 
@@ -49,7 +48,7 @@
             z-index: -1;
         }
 
-        /* Glassmorphism Card (image_2.png style)[span_5](start_span)[span_5](end_span) */
+        /* Glassmorphism Card[span_4](start_span)[span_4](end_span)[span_5](start_span)[span_5](end_span) */
         .card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
@@ -70,24 +69,21 @@
             border-radius: 50%;
             border: 3px solid #fff;
             margin-bottom: 15px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
 
         .brand-name {
             font-size: 28px;
             font-weight: bold;
             margin-bottom: 10px;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
         }
 
-        .bio { font-size: 14px; line-height: 1.4; margin-bottom: 20px; opacity: 0.9; }
-        .location { font-size: 13px; margin-bottom: 30px; }
+        .bio { font-size: 14px; margin-bottom: 20px; opacity: 0.9; }
 
-        /* Real Colors & Glowing Icons[span_6](start_span)[span_6](end_span)[span_7](start_span)[span_7](end_span) */
+        /* Permanent Glowing Icons (image_4.png style)[span_6](start_span)[span_6](end_span) */
         .social-container {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 15px;
             flex-wrap: wrap;
             margin-bottom: 35px;
         }
@@ -95,27 +91,22 @@
         .social-icon {
             text-decoration: none;
             font-size: 22px;
-            width: 42px; height: 42px;
+            width: 45px; height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            transition: 0.4s;
-            background: rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+            background: #fff; /* Icons background white like image_4.png[span_7](start_span)[span_7](end_span) */
         }
 
-        .yt { color: #ff0000; border: 1px solid #ff0000; }
-        .yt:hover { box-shadow: 0 0 20px #ff0000; background: #ff0000; color: #fff; }
-        .fb { color: #1877f2; border: 1px solid #1877f2; }
-        .fb:hover { box-shadow: 0 0 20px #1877f2; background: #1877f2; color: #fff; }
-        .dc { color: #5865f2; border: 1px solid #5865f2; }
-        .dc:hover { box-shadow: 0 0 20px #5865f2; background: #5865f2; color: #fff; }
-        .ig { color: #e4405f; border: 1px solid #e4405f; }
-        .ig:hover { box-shadow: 0 0 20px #e4405f; background: #e4405f; color: #fff; }
-        .gm { color: #db4437; border: 1px solid #db4437; }
-        .gm:hover { box-shadow: 0 0 20px #db4437; background: #db4437; color: #fff; }
-        .ps { color: #00ffcc; border: 1px solid #00ffcc; }
-        .ps:hover { box-shadow: 0 0 20px #00ffcc; background: #00ffcc; color: #fff; }
+        /* Specific Brand Colors and Permanent Glow[span_8](start_span)[span_8](end_span) */
+        .yt { color: #ff0000; box-shadow: 0 0 15px #ff0000; }
+        .fb { color: #1877f2; box-shadow: 0 0 15px #1877f2; }
+        .dc { color: #5865f2; box-shadow: 0 0 15px #5865f2; }
+        .ig { color: #e4405f; box-shadow: 0 0 15px #e4405f; }
+        .gm { color: #db4437; box-shadow: 0 0 15px #db4437; }
+        .ps { color: #00ffcc; box-shadow: 0 0 15px #00ffcc; }
 
         .player-box {
             background: rgba(0, 0, 0, 0.5);
@@ -130,8 +121,7 @@
 <body>
 
     <div class="video-background">
-        <!-- Using YouTube-No-Cookie to reduce ads[span_8](start_span)[span_8](end_span) -->
-        <iframe src="https://www.youtube-nocookie.com/embed/Ulm_Z646eBg?autoplay=1&mute=1&loop=1&playlist=Ulm_Z646eBg&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe src="https://www.youtube-nocookie.com/embed/Ulm_Z646eBg?autoplay=1&mute=1&loop=1&playlist=Ulm_Z646eBg&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>
     </div>
     <div class="overlay"></div>
 
@@ -139,8 +129,7 @@
         <img src="https://i.postimg.cc/tgvv6tc7/IMG-3920.jpg" class="profile-img">
         <div class="brand-name">Pixel Playz BD</div>
         
-        <p class="bio">"Hello everyone..!! I am Arifin, Founder of Pixel Playz BD. Stay connected with me through the links below! :)&darr;"</p>
-        <p class="location"><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh, Earth :)</p>
+        <p class="bio">"Hello everyone..!! I am Arifin, Founder of Pixel Playz BD. Stay connected!"</p>
 
         <div class="social-container">
             <a href="https://www.youtube.com/@PixelPlayzBD" target="_blank" class="social-icon yt"><i class="fab fa-youtube"></i></a>
