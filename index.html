@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Playz BD | aRIFIN</title>
+    <title>Pixel Playz BD | Bio Link</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -15,150 +15,137 @@
             justify-content: center;
             align-items: center;
             background: #000;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             overflow: hidden;
         }
 
-        /* Full Screen Background Video with Blur */
+        /* Background Video - 20% Blur as requested[span_3](start_span)[span_3](end_span) */
         .video-container {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
             z-index: -2;
-            overflow: hidden;
         }
 
         .video-bg {
             width: 100%; height: 100%;
             object-fit: cover;
-            /* 20% Blur and Brightness control */
-            filter: blur(8px) brightness(0.5); 
-            transform: scale(1.1); /* Blur edge gulo thik korar jonno halka scale */
+            filter: blur(10px) brightness(0.6);
+            transform: scale(1.1);
         }
 
-        /* Dark Overlay for better contrast */
-        .overlay {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.2);
-            z-index: -1;
-        }
-
-        /* Glassmorphism Card Design */
+        /* Glassmorphism Card - Image_2.png layout[span_4](start_span)[span_4](end_span) */
         .card {
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 30px;
-            padding: 40px 25px;
+            border-radius: 35px;
+            padding: 40px 20px;
             text-align: center;
             color: white;
             width: 90%;
-            max-width: 420px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+            max-width: 450px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
         }
 
         .profile-img {
-            width: 115px; height: 115px;
+            width: 120px; height: 120px;
             border-radius: 50%;
             border: 3px solid #fff;
             margin-bottom: 10px;
             object-fit: cover;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
         }
 
-        /* Brand Name under Profile Pic */
+        /* Name replaced with Pixel Playz BD[span_5](start_span)[span_5](end_span) */
         .brand-name {
-            font-size: 20px;
-            font-weight: bold;
-            color: #00d2ff;
-            text-transform: uppercase;
+            font-size: 30px;
+            font-weight: 800;
             letter-spacing: 1px;
             margin-bottom: 15px;
-            text-shadow: 0 0 10px rgba(0, 210, 255, 0.6);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
         }
 
-        h1 { font-size: 26px; letter-spacing: 2px; margin-bottom: 10px; }
-        .bio { font-size: 14px; opacity: 0.9; line-height: 1.5; margin-bottom: 25px; }
+        .bio { font-size: 15px; opacity: 0.95; line-height: 1.4; margin-bottom: 10px; }
+        .location { font-size: 14px; margin-bottom: 25px; color: #fff; font-weight: 500; }
 
-        /* Social Icons with Real Colors & Glowing Effect */
+        /* Social Icons - Real Colors & Glow[span_6](start_span)[span_6](end_span)[span_7](start_span)[span_7](end_span) */
         .social-container {
             display: flex;
             justify-content: center;
             gap: 12px;
             flex-wrap: wrap;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .social-icon {
             text-decoration: none;
-            font-size: 20px;
-            width: 45px; height: 45px;
+            font-size: 22px;
+            width: 42px; height: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             transition: all 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        /* Specific Glowing Colors */
-        .yt:hover { color: #FF0000; box-shadow: 0 0 20px #FF0000; background: #fff; }
-        .fb:hover { color: #1877F2; box-shadow: 0 0 20px #1877F2; background: #fff; }
-        .dc:hover { color: #5865F2; box-shadow: 0 0 20px #5865F2; background: #fff; }
-        .gp:hover { color: #20b3ff; box-shadow: 0 0 20px #20b3ff; background: #fff; }
-        .ig:hover { color: #E4405F; box-shadow: 0 0 20px #E4405F; background: #fff; }
-        .gm:hover { color: #DB4437; box-shadow: 0 0 20px #DB4437; background: #fff; }
-        .ps:hover { color: #00ffcc; box-shadow: 0 0 20px #00ffcc; background: #fff; }
+        /* Color Mapping with Glow[span_8](start_span)[span_8](end_span) */
+        .yt { color: #ff0000; } .yt:hover { box-shadow: 0 0 20px #ff0000; background: #fff; }
+        .fb { color: #1877f2; } .fb:hover { box-shadow: 0 0 20px #1877f2; background: #fff; }
+        .dc { color: #5865f2; } .dc:hover { box-shadow: 0 0 20px #5865f2; background: #fff; }
+        .ig { color: #e4405f; } .ig:hover { box-shadow: 0 0 20px #e4405f; background: #fff; }
+        .gm { color: #db4437; } .gm:hover { box-shadow: 0 0 20px #db4437; background: #fff; }
+        .ps { color: #00ffcc; } .ps:hover { box-shadow: 0 0 20px #00ffcc; background: #fff; }
 
-        .social-icon i { transition: transform 0.3s; }
-        .social-icon:hover i { transform: scale(1.2); }
-
-        /* Music Player UI */
+        /* Music Player Box - Exact Image_2.png style[span_9](start_span)[span_9](end_span) */
         .player-box {
             background: rgba(0, 0, 0, 0.4);
-            border-radius: 15px;
-            padding: 12px;
+            border-radius: 20px;
+            padding: 15px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        .music-info { font-size: 12px; text-align: left; }
+        .music-title { font-size: 13px; text-align: left; }
     </style>
 </head>
 <body>
 
     <div class="video-container">
+        <!-- Kapwing Background Video[span_10](start_span)[span_10](end_span) -->
         <video class="video-bg" autoplay muted loop playsinline>
             <source src="https://cdn.kapwing.com/final_6a05a475dc052632f9c6ea60_5131481514.mp4" type="video/mp4">
         </video>
     </div>
-    <div class="overlay"></div>
 
     <div class="card">
-        <img src="https://i.postimg.cc/tgvv6tc7/IMG-3920.jpg" alt="aRIFIN" class="profile-img">
+        <!-- Profile Pic from previous link -->
+        <img src="https://i.postimg.cc/tgvv6tc7/IMG-3920.jpg" class="profile-img">
+        
+        <!-- Replaced name[span_11](start_span)[span_11](end_span) -->
         <div class="brand-name">Pixel Playz BD</div>
         
-        <h1>aRIFIN</h1>
-        <p class="bio">"Hello everyone..!! I am Arifin, The Founder of Pixel Playz BD. Stay connected with me through the links below! :)"</p>
+        <p class="bio">"Hello everyone..!! I am Arifin, The Founder of Pixel Playz BD. You can find me here and stay connected with me through the links below! :)&darr;"</p>
+        <p class="location"><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh, Earth :)</p>
 
         <div class="social-container">
             <a href="https://www.youtube.com/@PixelPlayzBD" target="_blank" class="social-icon yt"><i class="fab fa-youtube"></i></a>
             <a href="https://www.facebook.com/PixelPlayzOfficial" target="_blank" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
             <a href="https://discord.com/invite/VrtYPZja" target="_blank" class="social-icon dc"><i class="fab fa-discord"></i></a>
-            <a href="https://www.facebook.com/groups/805263295338049" target="_blank" class="social-icon gp"><i class="fas fa-users"></i></a>
+            <a href="https://www.facebook.com/groups/805263295338049" target="_blank" class="social-icon fb"><i class="fas fa-users"></i></a>
             <a href="https://www.instagram.com/pixel.playz.official" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
             <a href="mailto:pixbhaiofficial@gmail.com" class="social-icon gm"><i class="fas fa-envelope"></i></a>
             <a href="https://www.facebook.com/iamarifin778" target="_blank" class="social-icon ps"><i class="fas fa-user-check"></i></a>
         </div>
 
+        <!-- Styled Music Player[span_12](start_span)[span_12](end_span) -->
         <div class="player-box">
-            <div class="music-info">
-                <p>🎵 Playing: Pixel Playz Theme</p>
+            <div class="music-title">
+                <p>🎵 Pixel Playz Theme</p>
+                <p style="font-size: 11px; opacity: 0.6;">0:26 / 0:46</p>
             </div>
             <audio id="bgMusic" loop>
                 <source src="https://www.image2url.com/r2/default/audio/1778752716714-a09dc305-89f6-48aa-84b0-c35aabae4564.mp3" type="audio/mpeg">
@@ -183,7 +170,7 @@
             }
         }
         
-        // Music start on click
+        // Music interaction logic
         document.body.addEventListener('click', function() {
             if (music.paused) {
                 music.play();
@@ -191,6 +178,5 @@
             }
         }, { once: true });
     </script>
-
 </body>
 </html>
