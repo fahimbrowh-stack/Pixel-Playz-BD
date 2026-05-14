@@ -19,20 +19,26 @@
             overflow: hidden;
         }
 
-        /* Video Background Fix[span_4](start_span)[span_4](end_span) */
-        .video-container {
+        /* YouTube Background Container[span_4](start_span)[span_4](end_span) */
+        .video-background {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
             z-index: -2;
-            background: #000; /* Video load na hole black thakbe */
+            pointer-events: none;
+            overflow: hidden;
         }
 
-        .video-bg {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            filter: blur(10px) brightness(0.6); /* 20% Blur[span_5](start_span)[span_5](end_span) */
-            transform: scale(1.1);
+        .video-background iframe {
+            width: 100vw;
+            height: 56.25vw; /* 16:9 Aspect Ratio */
+            min-height: 100vh;
+            min-width: 177.77vh; /* 16:9 Aspect Ratio */
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            /* 20% Blur & Darker for Readability[span_5](start_span)[span_5](end_span) */
+            filter: blur(10px) brightness(0.5);
         }
 
         .overlay {
@@ -43,7 +49,7 @@
             z-index: -1;
         }
 
-        /* Glassmorphism Card[span_6](start_span)[span_6](end_span)[span_7](start_span)[span_7](end_span) */
+        /* Glassmorphism Card (image_2.png style)[span_6](start_span)[span_6](end_span) */
         .card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
@@ -56,6 +62,7 @@
             width: 90%;
             max-width: 440px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
 
         .profile-img {
@@ -66,7 +73,6 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
 
-        /* Brand Name[span_8](start_span)[span_8](end_span) */
         .brand-name {
             font-size: 28px;
             font-weight: bold;
@@ -77,7 +83,7 @@
         .bio { font-size: 14px; line-height: 1.4; margin-bottom: 20px; opacity: 0.9; }
         .location { font-size: 13px; margin-bottom: 30px; }
 
-        /* Social Icons with Real Colors & Glow[span_9](start_span)[span_9](end_span)[span_10](start_span)[span_10](end_span) */
+        /* Real Colors & Glowing Icons[span_7](start_span)[span_7](end_span)[span_8](start_span)[span_8](end_span) */
         .social-container {
             display: flex;
             justify-content: center;
@@ -98,26 +104,21 @@
             background: rgba(0, 0, 0, 0.3);
         }
 
-        /* Glowing Colors[span_11](start_span)[span_11](end_span) */
+        /* Glowing Effects[span_9](start_span)[span_9](end_span) */
         .yt { color: #ff0000; border: 1px solid #ff0000; }
         .yt:hover { box-shadow: 0 0 20px #ff0000; background: #ff0000; color: #fff; }
-
         .fb { color: #1877f2; border: 1px solid #1877f2; }
         .fb:hover { box-shadow: 0 0 20px #1877f2; background: #1877f2; color: #fff; }
-
         .dc { color: #5865f2; border: 1px solid #5865f2; }
         .dc:hover { box-shadow: 0 0 20px #5865f2; background: #5865f2; color: #fff; }
-
         .ig { color: #e4405f; border: 1px solid #e4405f; }
         .ig:hover { box-shadow: 0 0 20px #e4405f; background: #e4405f; color: #fff; }
-
         .gm { color: #db4437; border: 1px solid #db4437; }
         .gm:hover { box-shadow: 0 0 20px #db4437; background: #db4437; color: #fff; }
-
         .ps { color: #00ffcc; border: 1px solid #00ffcc; }
         .ps:hover { box-shadow: 0 0 20px #00ffcc; background: #00ffcc; color: #fff; }
 
-        /* Music Player Box[span_12](start_span)[span_12](end_span) */
+        /* Music Player[span_10](start_span)[span_10](end_span) */
         .player-box {
             background: rgba(0, 0, 0, 0.5);
             border-radius: 20px;
@@ -130,11 +131,9 @@
 </head>
 <body>
 
-    <div class="video-container">
-        <!-- Direct MP4 Video Fix[span_13](start_span)[span_13](end_span) -->
-        <video class="video-bg" autoplay muted loop playsinline>
-            <source src="https://cdn.kapwing.com/final_6a05a475dc052632f9c6ea60_5131481514.mp4" type="video/mp4">
-        </video>
+    <div class="video-background">
+        <!-- YouTube Video ID: Ulm_Z646eBg[span_11](start_span)[span_11](end_span) -->
+        <iframe src="https://www.youtube.com/embed/Ulm_Z646eBg?autoplay=1&mute=1&loop=1&playlist=Ulm_Z646eBg&controls=0&showinfo=0&rel=0&iv_load_policy=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
     <div class="overlay"></div>
 
@@ -176,7 +175,10 @@
             if (music.paused) { music.play(); icon.className = "fas fa-pause"; }
             else { music.pause(); icon.className = "fas fa-play"; }
         }
-        document.body.addEventListener('click', function() { if (music.paused) { music.play(); icon.className = "fas fa-pause"; } }, { once: true });
+        // Interaction to enable autoplay music[span_12](start_span)[span_12](end_span)
+        document.body.addEventListener('click', function() { 
+            if (music.paused) { music.play(); icon.className = "fas fa-pause"; } 
+        }, { once: true });
     </script>
 </body>
 </html>
