@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Playz BD - Bio Link</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        /* Background Video/Image Animation */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=2070&auto=format&fit=crop'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Glassmorphism Card */
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: #111;
+            padding: 5px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            padding: 0 20px;
+        }
+
+        .location {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 30px;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .icon-circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .icon-circle:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Music Player UI */
+        .music-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .music-thumb {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .music-info p {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .music-info span {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: #ff4d4d;
+            width: 30%; /* Mock progress */
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container { padding: 30px 15px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <div class="container">
+        <!-- Logo Section -->
+        <img src="https://via.placeholder.com/150/000000/FFFFFF?text=PP" alt="Logo" class="profile-img">
+        
+        <h1>aRIFIN</h1>
+        
+        <p class="description">
+            "Hello everyone..!! I am Arifin, The Founder of Pixel Playz BD. You can find me here and stay connected with me through the links below! :)&darr;"
+        </p>
+        
+        <p class="location">📍 Dhaka, Bangladesh, Earth :)</p>
+
+        <!-- Social Links -->
+        <div class="social-icons">
+            <a href="#" class="icon-circle" title="YouTube" style="background: #FF0000;">📺</a>
+            <a href="#" class="icon-circle" title="Facebook" style="background: #1877F2;">f</a>
+            <a href="#" class="icon-circle" title="Discord" style="background: #5865F2;">💬</a>
+            <a href="#" class="icon-circle" title="Instagram" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);">📸</a>
+            <a href="#" class="icon-circle" title="Email" style="background: #D44638;">📧</a>
+            <a href="#" class="icon-circle" title="TikTok" style="background: #000000;">📱</a>
+            <a href="#" class="icon-circle" title="WhatsApp" style="background: #25D366;">📞</a>
+        </div>
+
+        <!-- Music Section -->
+        <div class="music-card">
+            <img src="https://via.placeholder.com/50/FFC0CB/000000?text=Cat" alt="Music" class="music-thumb">
+            <div class="music-info">
+                <p>Pixels '- ' </p>
+                <span>0:01 / 0:46</span>
+            </div>
+            <div class="progress-bar"></div>
+            
+            <!-- Audio Tag for Music (Needs a direct link to work) -->
+            <audio id="bg-audio" loop>
+                <source src="your-audio-file.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+    <script>
+        // Background music auto-play attempt (often needs user interaction)
+        window.addEventListener('click', () => {
+            const audio = document.getElementById('bg-audio');
+            audio.play().catch(e => console.log("Audio play blocked until interaction"));
+        }, { once: true });
+    </script>
+
+</body>
+</html>
