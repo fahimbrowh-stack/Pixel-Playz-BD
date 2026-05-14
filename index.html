@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aRIFIN | Pixel Playz BD</title>
-    <!-- FontAwesome for Icons -->
+    <title>Pixel Playz BD | aRIFIN</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -20,47 +19,71 @@
             overflow: hidden;
         }
 
-        /* Full Screen Banner Background */
-        .bg-banner {
+        /* Full Screen Background Video with Blur */
+        .video-container {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            z-index: -1;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .video-bg {
+            width: 100%; height: 100%;
             object-fit: cover;
-            filter: brightness(0.6); /* Jate lekha gulo bhalo bujha jay */
+            /* 20% Blur and Brightness control */
+            filter: blur(8px) brightness(0.5); 
+            transform: scale(1.1); /* Blur edge gulo thik korar jonno halka scale */
+        }
+
+        /* Dark Overlay for better contrast */
+        .overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: -1;
         }
 
         /* Glassmorphism Card Design */
         .card {
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            padding: 40px 25px;
             text-align: center;
             color: white;
             width: 90%;
             max-width: 420px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
         }
 
-        /* Profile Image Updated */
         .profile-img {
-            width: 110px;
-            height: 110px;
+            width: 115px; height: 115px;
             border-radius: 50%;
-            border: 3px solid rgba(255, 255, 255, 0.8);
-            margin-bottom: 15px;
+            border: 3px solid #fff;
+            margin-bottom: 10px;
             object-fit: cover;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
 
-        h1 { font-size: 28px; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; }
-        .bio { font-size: 14px; opacity: 0.9; line-height: 1.5; margin-bottom: 10px; }
-        .location { font-size: 13px; margin-bottom: 25px; color: #ccc; }
+        /* Brand Name under Profile Pic */
+        .brand-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #00d2ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 210, 255, 0.6);
+        }
 
-        /* Social Icons */
+        h1 { font-size: 26px; letter-spacing: 2px; margin-bottom: 10px; }
+        .bio { font-size: 14px; opacity: 0.9; line-height: 1.5; margin-bottom: 25px; }
+
+        /* Social Icons with Real Colors & Glowing Effect */
         .social-container {
             display: flex;
             justify-content: center;
@@ -71,27 +94,32 @@
 
         .social-icon {
             text-decoration: none;
-            color: white;
             font-size: 20px;
-            width: 42px;
-            height: 42px;
+            width: 45px; height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .social-icon:hover {
-            transform: scale(1.1);
-            background: #fff;
-            color: #000;
-        }
+        /* Specific Glowing Colors */
+        .yt:hover { color: #FF0000; box-shadow: 0 0 20px #FF0000; background: #fff; }
+        .fb:hover { color: #1877F2; box-shadow: 0 0 20px #1877F2; background: #fff; }
+        .dc:hover { color: #5865F2; box-shadow: 0 0 20px #5865F2; background: #fff; }
+        .gp:hover { color: #20b3ff; box-shadow: 0 0 20px #20b3ff; background: #fff; }
+        .ig:hover { color: #E4405F; box-shadow: 0 0 20px #E4405F; background: #fff; }
+        .gm:hover { color: #DB4437; box-shadow: 0 0 20px #DB4437; background: #fff; }
+        .ps:hover { color: #00ffcc; box-shadow: 0 0 20px #00ffcc; background: #fff; }
+
+        .social-icon i { transition: transform 0.3s; }
+        .social-icon:hover i { transform: scale(1.2); }
 
         /* Music Player UI */
         .player-box {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.4);
             border-radius: 15px;
             padding: 12px;
             display: flex;
@@ -104,31 +132,33 @@
 </head>
 <body>
 
-    <!-- Banner PNG Background -->
-    <img class="bg-banner" src="https://i.postimg.cc/VLMVrt1D/IMG-3922.png" alt="banner">
+    <div class="video-container">
+        <video class="video-bg" autoplay muted loop playsinline>
+            <source src="https://cdn.kapwing.com/final_6a05a475dc052632f9c6ea60_5131481514.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="overlay"></div>
 
     <div class="card">
-        <!-- Profile Image Added -->
         <img src="https://i.postimg.cc/tgvv6tc7/IMG-3920.jpg" alt="aRIFIN" class="profile-img">
+        <div class="brand-name">Pixel Playz BD</div>
         
         <h1>aRIFIN</h1>
-        <p class="bio">"Hello everyone..!! I am Arifin, The Founder of Pixel Playz BD. You can find me here and stay connected with me through the links below! :)"</p>
-        <p class="location"><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh, Earth :)</p>
+        <p class="bio">"Hello everyone..!! I am Arifin, The Founder of Pixel Playz BD. Stay connected with me through the links below! :)"</p>
 
         <div class="social-container">
-            <a href="https://www.youtube.com/@PixelPlayzBD" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.facebook.com/PixelPlayzOfficial" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://discord.com/invite/VrtYPZja" target="_blank" class="social-icon"><i class="fab fa-discord"></i></a>
-            <a href="https://www.facebook.com/groups/805263295338049" target="_blank" class="social-icon"><i class="fas fa-users"></i></a>
-            <a href="https://www.instagram.com/pixel.playz.official" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:pixbhaiofficial@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.facebook.com/iamarifin778" target="_blank" class="social-icon"><i class="fas fa-user"></i></a>
+            <a href="https://www.youtube.com/@PixelPlayzBD" target="_blank" class="social-icon yt"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/PixelPlayzOfficial" target="_blank" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://discord.com/invite/VrtYPZja" target="_blank" class="social-icon dc"><i class="fab fa-discord"></i></a>
+            <a href="https://www.facebook.com/groups/805263295338049" target="_blank" class="social-icon gp"><i class="fas fa-users"></i></a>
+            <a href="https://www.instagram.com/pixel.playz.official" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:pixbhaiofficial@gmail.com" class="social-icon gm"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.facebook.com/iamarifin778" target="_blank" class="social-icon ps"><i class="fas fa-user-check"></i></a>
         </div>
 
         <div class="player-box">
             <div class="music-info">
-                <p>🎵 Now Playing...</p>
-                <p style="opacity: 0.6;">Pixel Playz Audio</p>
+                <p>🎵 Playing: Pixel Playz Theme</p>
             </div>
             <audio id="bgMusic" loop>
                 <source src="https://www.image2url.com/r2/default/audio/1778752716714-a09dc305-89f6-48aa-84b0-c35aabae4564.mp3" type="audio/mpeg">
@@ -146,18 +176,18 @@
         function togglePlay() {
             if (music.paused) {
                 music.play();
-                icon.classList.replace("fa-play", "fa-pause");
+                icon.className = "fas fa-pause";
             } else {
                 music.pause();
-                icon.classList.replace("fa-pause", "fa-play");
+                icon.className = "fas fa-play";
             }
         }
         
-        // Music auto-play logic
+        // Music start on click
         document.body.addEventListener('click', function() {
             if (music.paused) {
                 music.play();
-                icon.classList.replace("fa-play", "fa-pause");
+                icon.className = "fas fa-pause";
             }
         }, { once: true });
     </script>
